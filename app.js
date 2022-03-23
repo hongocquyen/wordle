@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         fetch("http://127.0.0.1:8000/word")
         .then(response => response.json())
         .then(json =>{
-            console.log(json);
+            // console.log(json);
             word = json
         })
         .catch(err => console.log(err))
