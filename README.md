@@ -12,6 +12,6 @@ Create a `.env` file in ./ with the following:
 RAPID_API_KEY={rapid_api_key}
 ```
 
-###`npm run give-me-word`
+###`npm run give-me-words`
 
 Start the backend with this command on [localhost:8000](http://localhost:8000)
