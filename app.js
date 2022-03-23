@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded",() =>{
 
         if (guessedWords.length === 6){
             // window.alert(`You lose, the word is ${word}.`)
-            showMessage("You lose!")
+            showMessage("You lose! The word is "+ word)
 
         }
         guessedWords.push([]);
