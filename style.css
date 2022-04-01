@@ -45,7 +45,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  overflow: hidden;
+  overflow:unset;
 }
 
 #board {
@@ -64,26 +64,82 @@ header {
   font-weight: bold;
   color: gainsboro;
   text-transform: uppercase;
-
+  background-color: hsl(var(--hue, 0), var(--sat, 0%), var(--light, 0%));
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.message-container {
-  height: 30px;
-  padding: 10px;
-  text-align: center;
+.square.wrong {
+  --light: 23%;
 }
 
-.message-container p {
-  background-color: gainsboro;
-  border-radius: 10px;
-  padding: 5px;
-  width: auto;
-  margin: 0;
-  font-family: "Clear Sans";
-  font-weight: bolder;
+.square.wrong-position {
+  --hue: 49;
+  --sat: 51%;
+  --light: 47%;
+}
+
+.square.correct {
+  --hue: 115;
+  --sat: 29%;
+  --light: 42%;
+}
+
+.square.shake {
+  animation: shake 250ms ease-in-out;
+}
+
+@keyframes shake {
+  10% {
+    transform: translateX(-5%);
+  }
+  30% {
+    transform: translateX(5%);
+  }
+  50% {
+    transform: translateX(-7.5%);
+  }
+  70% {
+    transform: translateX(7.5%);
+  }
+  90% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.alert-container {
+  position: fixed;
+  z-index: 1;
+  top: 10vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.alert {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  pointer-events: none;
+  background-color: hsl(104, 7%, 85%);
+  padding: 0.75em;
+  border-radius: 0.25em;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  margin-bottom: 0.5em;
+}
+
+.alert:last-child {
+  margin-bottom: 0;
+}
+
+.alert.hide {
+  opacity: 0;
 }
 
 #keyboard-container {
@@ -104,10 +160,17 @@ header {
   font-weight: bold;
   border: 0;
   padding: 0;
+}
+
+.key {
   border-radius: 4px;
   height: 58px;
   cursor: pointer;
-  background-color: rgb(129, 130, 132);
+  background-color: hsl(
+    var(--hue, 200),
+    var(--sat, 1%),
+    calc(var(--light-offset, 0%) + var(--light, 51%))
+  );
   color: rgb(237, 234, 240);
   flex-grow: 1;
   text-transform: uppercase;
@@ -115,6 +178,25 @@ header {
   user-select: none;
 }
 
+.key:hover,
+.key:focus {
+  --light-offset: 10%;
+}
+.key.wrong {
+  --light: 23%;
+}
+
+.key.wrong-position {
+  --hue: 49;
+  --sat: 51%;
+  --light: 47%;
+}
+
+.key.correct {
+  --hue: 115;
+  --sat: 29%;
+  --light: 42%;
+}
 .keyboard-row button.wide-button {
   flex-grow: 1.2;
 }
