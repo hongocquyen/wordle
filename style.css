@@ -45,7 +45,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  overflow:unset;
+  overflow: unset;
 }
 
 #board {
@@ -123,7 +123,8 @@ header {
 }
 
 .alert {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 500;
   pointer-events: none;
   background-color: hsl(104, 7%, 85%);
