@@ -15,3 +15,6 @@ RAPID_API_KEY={rapid_api_key}
 ###`npm run give-me-words`
 
 Start the backend with this command on [localhost:8000](http://localhost:8000)
+
+
+Visit: https://hongocquyen.github.io/wordle/
